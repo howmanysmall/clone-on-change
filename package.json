@@ -6,7 +6,7 @@
 	"bin": {
 		"clone-on-change": "./dist/index.js"
 	},
-	"description": "A brand new Bun CLI!",
+	"description": "Clones files on change.",
 	"name": "@roblox-tooling/clone-on-change",
 	"module": "src/index.ts",
 	"type": "module",
