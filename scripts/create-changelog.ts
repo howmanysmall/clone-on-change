@@ -14,7 +14,7 @@ import { Octokit } from "@octokit/rest";
 import scriptConsole from "./utilities/script-console";
 
 const REPO_OWNER = "howmanysmall";
-const REPO_NAME = "clone-on-change";
+const REPO_NAME = "relay";
 
 /** Environment variable configuration for LLM providers. */
 interface ProviderConfiguration {
@@ -257,11 +257,11 @@ function generateChangelogPrompt(
 	const sections = [
 		"# Changelog Generation Request",
 		"",
-		"Please generate a comprehensive changelog for the next release of **clone-on-change**, a Luau LSP wrapper tool.",
+		"Please generate a comprehensive changelog for the next release of **relay**, a Luau LSP wrapper tool.",
 		"",
 		"## Project Context",
 		"",
-		'**clone-on-change** is a TypeScript/Bun-based CLI tool that serves as a "visual" Luau LSP wrapper, designed to improve linting capabilities for Luau code. The project uses modern JavaScript runtime (Bun) and follows strict TypeScript coding standards.',
+		'**relay** is a TypeScript/Bun-based CLI tool that serves as a "visual" Luau LSP wrapper, designed to improve linting capabilities for Luau code. The project uses modern JavaScript runtime (Bun) and follows strict TypeScript coding standards.',
 		"",
 		`## Previous Release: ${releaseInfo.name} (${releaseInfo.tagName})`,
 		`**Published:** ${new Date(releaseInfo.publishedAt).toLocaleDateString()}`,

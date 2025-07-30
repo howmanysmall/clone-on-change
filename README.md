@@ -1,4 +1,4 @@
-# clone-on-change
+# relay
 
 To install dependencies:
 
@@ -57,7 +57,7 @@ To build a standalone executable locally:
 bun run build
 
 # Create standalone executable
-bun build src/index.ts --compile --outfile=clone-on-change
+bun build src/index.ts --compile --outfile=relay
 ```
 
 This project was created using `bun init` in bun v1.2.18. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.

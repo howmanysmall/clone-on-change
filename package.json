@@ -4,10 +4,10 @@
 		"outDir": "./dist"
 	},
 	"bin": {
-		"clone-on-change": "./dist/index.js"
+		"relay": "./dist/index.js"
 	},
 	"description": "Clones files on change.",
-	"name": "@roblox-tooling/clone-on-change",
+	"name": "@roblox-tooling/relay",
 	"module": "src/index.ts",
 	"type": "module",
 	"engines": {
@@ -44,7 +44,7 @@
 		"zod-validation-error": "^4.0.0-beta.2"
 	},
 	"scripts": {
-		"build:executable": "bun build ./dist --compile --production --target=bun --outfile=clone-on-change --minify --sourcemap",
+		"build:executable": "bun build ./dist --compile --production --target=bun --outfile=relay --minify --sourcemap",
 		"build": "bunli build",
 		"create-release": "bun run ./scripts/create-release.ts",
 		"dev": "bun --hot run src/index.ts",
@@ -62,13 +62,13 @@
 	"author": {
 		"name": "HowManySmall"
 	},
-	"homepage": "https://github.com/howmanysmall/clone-on-change#readme",
+	"homepage": "https://github.com/howmanysmall/relay#readme",
 	"bugs": {
-		"url": "https://github.com/howmanysmall/clone-on-change/issues"
+		"url": "https://github.com/howmanysmall/relay/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/howmanysmall/clone-on-change.git"
+		"url": "https://github.com/howmanysmall/relay.git"
 	},
 	"license": "MIT",
 	"main": "src/index.ts"

@@ -27,9 +27,9 @@ describe("application-paths", () => {
 		}
 	});
 
-	it("should contain clone-on-change in path names", () => {
+	it("should contain relay in path names", () => {
 		const paths = [applicationPaths.data, applicationPaths.config, applicationPaths.cache];
-		for (const path of paths) expect(path.toLowerCase()).toContain("clone-on-change");
+		for (const path of paths) expect(path.toLowerCase()).toContain("relay");
 	});
 
 	describe("platform-specific behavior", () => {

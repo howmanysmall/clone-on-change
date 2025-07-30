@@ -280,21 +280,21 @@ async function generateReleaseNotesAsync(version: string): Promise<string> {
 
 ${commits || "- Initial release"}
 
-**Full Changelog**: https://github.com/howmanysmall/clone-on-change/compare/v${version}
+**Full Changelog**: https://github.com/howmanysmall/relay/compare/v${version}
 
 ## Installation
 
 Download the appropriate binary for your platform from the assets below:
 
-- **Windows (x64)**: \`clone-on-change-${version}-windows-x64.zip\`
-- **macOS (Intel)**: \`clone-on-change-${version}-macos-x64.zip\`
-- **macOS (Apple Silicon)**: \`clone-on-change-${version}-macos-arm64.zip\`
-- **Linux (x64)**: \`clone-on-change-${version}-linux-x64.zip\`
-- **Linux (ARM64)**: \`clone-on-change-${version}-linux-arm64.zip\`
+- **Windows (x64)**: \`relay-${version}-windows-x64.zip\`
+- **macOS (Intel)**: \`relay-${version}-macos-x64.zip\`
+- **macOS (Apple Silicon)**: \`relay-${version}-macos-arm64.zip\`
+- **Linux (x64)**: \`relay-${version}-linux-x64.zip\`
+- **Linux (ARM64)**: \`relay-${version}-linux-arm64.zip\`
 
 Or install via npm:
 \`\`\`bash
-npm install -g clone-on-change
+npm install -g relay
 \`\`\``;
 }
 
@@ -320,7 +320,7 @@ async function createGitHubReleaseAsync(version: string, releaseNotes: string, i
 			generate_release_notes: false,
 			owner: "howmanysmall",
 			prerelease: isPrerelease,
-			repo: "clone-on-change",
+			repo: "relay",
 			tag_name: `v${version}`,
 		});
 
@@ -409,7 +409,7 @@ async function mainAsync(): Promise<void> {
 		scriptConsole.info("\n🎉 Release completed successfully!");
 		scriptConsole.info(`📦 Version: v${newVersion}`);
 		scriptConsole.info("🔄 GitHub Actions will now build the binaries automatically");
-		scriptConsole.info("🔗 View release: https://github.com/howmanysmall/clone-on-change/releases");
+		scriptConsole.info("🔗 View release: https://github.com/howmanysmall/relay/releases");
 	} catch (error) {
 		scriptConsole.error(`❌ Release failed: ${error instanceof Error ? error.message : String(error)}`);
 		process.exit(1);

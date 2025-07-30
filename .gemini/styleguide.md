@@ -1,8 +1,8 @@
-# CloneOnChange TypeScript Style Guide
+# Relay TypeScript Style Guide
 
 # Introduction
 
-This style guide establishes the coding conventions for TypeScript code developed in the clone-on-change project. It builds upon modern TypeScript and Bun best practices while incorporating specific organizational requirements and preferences. The guide prioritizes code readability, maintainability, consistency, and performance across all project components.
+This style guide establishes the coding conventions for TypeScript code developed in the relay project. It builds upon modern TypeScript and Bun best practices while incorporating specific organizational requirements and preferences. The guide prioritizes code readability, maintainability, consistency, and performance across all project components.
 
 # Key Principles
 

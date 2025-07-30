@@ -619,8 +619,8 @@ function createOpenRouterProvider(): LlmProvider | undefined {
 					headers: {
 						Authorization: `Bearer ${apiKey}`,
 						"Content-Type": APPLICATION_JSON,
-						"HTTP-Referer": "https://github.com/howmanysmall/clone-on-change",
-						"X-Title": "clone-on-change Changelog Generator",
+						"HTTP-Referer": "https://github.com/howmanysmall/relay",
+						"X-Title": "relay Changelog Generator",
 					},
 					method: "POST",
 				});

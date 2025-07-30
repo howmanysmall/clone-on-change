@@ -25,7 +25,7 @@ const enhancedFormat = format.combine(
  * namespaces, correlation IDs, and memory tracking.
  */
 const logger = createLogger({
-	defaultMeta: { service: "CloneOnChange" },
+	defaultMeta: { service: "Relay" },
 	format: enhancedFormat,
 	level: "info",
 	transports: [

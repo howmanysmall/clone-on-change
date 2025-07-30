@@ -65,8 +65,8 @@ case "$ASSET_TYPE" in
 	echo "Detected platform: $PLATFORM"
 
 	# Download the release asset for the current platform
-	echo "Downloading clone-on-change-$PLATFORM.tar.gz..."
-	gh release download --repo howmanysmall/clone-on-change --pattern "clone-on-change-$PLATFORM.tar.gz"
+	echo "Downloading relay-$PLATFORM.tar.gz..."
+	gh release download --repo howmanysmall/relay --pattern "relay-$PLATFORM.tar.gz"
 
 	if [ $? -ne 0 ]; then
 		echo "Failed to download release asset"
@@ -74,14 +74,14 @@ case "$ASSET_TYPE" in
 	fi
 
 	# Extract the downloaded file
-	echo "Extracting clone-on-change-$PLATFORM.tar.gz to current-release/..."
+	echo "Extracting relay-$PLATFORM.tar.gz to current-release/..."
 	mkdir -p current-release
-	tar -xzf "clone-on-change-$PLATFORM.tar.gz" -C current-release/
+	tar -xzf "relay-$PLATFORM.tar.gz" -C current-release/
 
 	if [ $? -eq 0 ]; then
 		echo "Successfully extracted release to current-release/"
 		echo "Cleaning up downloaded archive..."
-		rm "clone-on-change-$PLATFORM.tar.gz"
+		rm "relay-$PLATFORM.tar.gz"
 	else
 		echo "Failed to extract release"
 		exit 1
@@ -89,7 +89,7 @@ case "$ASSET_TYPE" in
 	;;
 "source")
 	echo "Downloading source code..."
-	gh release download --repo howmanysmall/clone-on-change --archive=tar.gz
+	gh release download --repo howmanysmall/relay --archive=tar.gz
 
 	if [ $? -ne 0 ]; then
 		echo "Failed to download source code"
@@ -99,12 +99,12 @@ case "$ASSET_TYPE" in
 	# Extract source code
 	echo "Extracting source code to current-release/..."
 	mkdir -p current-release
-	tar -xzf clone-on-change-*.tar.gz -C current-release/ --strip-components=1
+	tar -xzf relay-*.tar.gz -C current-release/ --strip-components=1
 
 	if [ $? -eq 0 ]; then
 		echo "Successfully extracted source code to current-release/"
 		echo "Cleaning up downloaded archive..."
-		rm clone-on-change-*.tar.gz
+		rm relay-*.tar.gz
 	else
 		echo "Failed to extract source code"
 		exit 1
