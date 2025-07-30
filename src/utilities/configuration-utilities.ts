@@ -9,10 +9,10 @@ import { readonlyArray, readonlyObject, strictReadonlyObject } from "./zod-utili
 const PREFIX_DOT_REGEX = /^\./;
 
 /**
- * A configuration for the pendant tool. This is how you can configure the tool
- * to your liking.
+ * A configuration for the relay tool. This is how you can configure the tool to
+ * your liking.
  */
-export const isPendantConfiguration = readonlyObject({
+export const isRelayConfiguration = readonlyObject({
 	/**
 	 * How you configure the contexts for files. These are Roblox service class
 	 * names.
@@ -77,7 +77,7 @@ export const isPendantConfiguration = readonlyObject({
  * A configuration for the pendant tool. This is how you can configure the tool
  * to your liking.
  */
-export type PendantConfiguration = Omit<z.infer<typeof isPendantConfiguration>, "$schema">;
+export type PendantConfiguration = Omit<z.infer<typeof isRelayConfiguration>, "$schema">;
 
 /**
  * Reads the pendant configuration from a file.
@@ -94,7 +94,7 @@ export async function getPendantConfigurationAsync(
 	const exists = await Bun.file(path).exists();
 	if (!exists) throw new Error(`Project file does not exist: ${path}`);
 
-	const configuration = await readFileAsync(path, ContentType.Json, isPendantConfiguration);
+	const configuration = await readFileAsync(path, ContentType.Json, isRelayConfiguration);
 	if ("$schema" in configuration) delete configuration.$schema;
 	return configuration;
 }
@@ -224,7 +224,7 @@ export async function getFirstConfigurationAsync(
 		try {
 			const text = await Bun.file(fullPath).text();
 			const parsed = parse(text);
-			const result = isPendantConfiguration.safeParse(parsed);
+			const result = isRelayConfiguration.safeParse(parsed);
 			if (result.success) {
 				const configuration = result.data;
 				if ("$schema" in configuration) delete configuration.$schema;
